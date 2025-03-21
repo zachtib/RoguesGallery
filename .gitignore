@@ -1,2 +1,5 @@
 # PyCharm Projet Files
 .idea/*
+
+# Local development database
+db.sqlite3
