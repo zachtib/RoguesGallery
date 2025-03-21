@@ -32,6 +32,10 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'daphne',
+
+    # Project apps
+    'chat', # Tutorial app for testing websockets
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
