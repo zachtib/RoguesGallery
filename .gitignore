@@ -3,3 +3,6 @@
 
 # Local development database
 db.sqlite3
+
+# Uploaded files
+uploads/*
