@@ -34,7 +34,8 @@ INSTALLED_APPS = [
     'daphne',
 
     # Project apps
-    'chat', # Tutorial app for testing websockets
+    'chat',  # Tutorial app for testing websockets
+    'users',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -96,6 +97,7 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = 'users.GalleryUser'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
