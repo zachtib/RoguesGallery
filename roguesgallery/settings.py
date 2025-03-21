@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     # Project apps
     'chat',  # Tutorial app for testing websockets
     'libraries',
+    'player',
     'users',
 
     'django.contrib.admin',
