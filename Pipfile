@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 django = "==4.2.20"
+channels = "==4.2.0"
 
 [dev-packages]
 
