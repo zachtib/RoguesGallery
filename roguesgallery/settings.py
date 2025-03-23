@@ -65,7 +65,9 @@ ROOT_URLCONF = 'roguesgallery.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            Path(BASE_DIR, "templates").resolve(),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
