@@ -18,7 +18,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'roguesgallery.settings')
 
 django_asgi_app = get_asgi_application()
 
-from chat.routing import websocket_urlpatterns
+from player.routing import websocket_urlpatterns
 
 application = ProtocolTypeRouter({
     "http": django_asgi_app,
