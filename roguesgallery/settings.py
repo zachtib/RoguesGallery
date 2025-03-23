@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'daphne',
 
     # Project apps
-    'chat',  # Tutorial app for testing websockets
     'libraries',
     'player',
     'users',
