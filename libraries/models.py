@@ -13,6 +13,13 @@ class LibraryManager(models.Manager):
         decoded_id = uuid.UUID(bytes=urlsafe_base64_decode(urlsafe_id))
         return self.get(id=decoded_id)
 
+    def get_by_urlsafe_id_or_404(self, urlsafe_id: str):
+        try:
+            return self.get_by_urlsafe_id(urlsafe_id)
+        except Library.DoesNotExist:
+            from django.http import Http404
+            raise Http404("No library found for the given id")
+
 
 class Library(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -24,6 +31,18 @@ class Library(models.Model):
     def get_absolute_url(self):
         from django.urls import reverse
         return reverse("library-detail", kwargs={
+            "library_id": self.get_urlsafe_id(),
+        })
+
+    def get_player_url(self):
+        from django.urls import reverse
+        return reverse("player", kwargs={
+            "library_id": self.get_urlsafe_id(),
+        })
+
+    def get_controller_url(self):
+        from django.urls import reverse
+        return reverse("controller", kwargs={
             "library_id": self.get_urlsafe_id(),
         })
 

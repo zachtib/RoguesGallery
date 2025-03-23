@@ -1,11 +1,6 @@
-<!-- chat/templates/chat/room.html -->
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <title>{{ library.name }}</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block content %}
+    <p><a href="{{ library.get_player_url }}">Player</a></p>
+    <p><a href="{{ library.get_controller_url }}">Controller</a></p>
+{% endblock %}
