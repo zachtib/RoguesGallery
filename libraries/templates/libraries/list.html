@@ -1,1 +1,7 @@
 {% extends "base.html" %}
+
+{% block content %}
+    {% for library in libraries %}
+        <p><a href="{{ library.get_absolute_url }}">{{ library.name }}</a></p>
+    {% endfor %}
+{% endblock %}

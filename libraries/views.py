@@ -4,7 +4,7 @@ from libraries.models import Library
 
 
 def library_list(request):
-    libraries = Library.objects.all()
+    libraries = Library.objects.filter(owner=request.user)
     return render(request, "libraries/list.html", {
         "libraries": libraries,
     })
